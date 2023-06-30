@@ -5,8 +5,8 @@ import os
 from dotenv import load_dotenv
 
 
-def create_spreadsheet():
-    spreadsheet_details = {"properties": {"title": "Attention-Data"}}
+def create_spreadsheet(title):
+    spreadsheet_details = {"properties": {"title": title}}
     sheet = (
         spreadsheet_service.spreadsheets()
         .create(body=spreadsheet_details, fields="spreadsheetId")
@@ -137,7 +137,7 @@ def read_range():
 
 
 def write_range():
-    spreadsheet_id = create_spreadsheet()
+    spreadsheet_id = create_spreadsheet("Test")
     range_name = "Sheet1!A1:H1"
     values = read_range()
     value_input_option = "USER_ENTERED"

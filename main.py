@@ -8,7 +8,7 @@ if __name__ == "__main__":
     file_path = "data/data.csv"
 
     if os.getenv("ID") is None:
-        spreadsheet_id = create_spreadsheet()
+        spreadsheet_id = create_spreadsheet("Attention-Data")
         write_columns_names(spreadsheet_id, file_path)
         export_pandas_df_to_sheets(spreadsheet_id, file_path)
 
